@@ -1,0 +1,6 @@
+id: fresh-group-buy-assistant
+name: Fresh Group Buy Assistant
+version: 1.0.0
+author: Xiaofuge
+description: 生鲜社区团购智能助手，支持商品推荐、拼团进度、自提点与订单查询。
+entrypoint: cn.xiaofuge.groupbuy.assistant.FreshGroupBuyAssistantPlugin

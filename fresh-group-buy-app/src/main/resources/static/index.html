@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fresh Group Buy · 生鲜社区团购</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="page-bg"></div>
+  <header class="site-header">
+    <a class="brand" href="/">
+      <span class="brand-mark">鲜</span>
+      <span><strong>Fresh Group Buy</strong><small>今日下单 · 明日自提</small></span>
+    </a>
+    <div class="search-box">
+      <input id="searchInput" type="search" placeholder="搜索草莓、羊肉、三文鱼…" autocomplete="off">
+    </div>
+    <div class="header-actions">
+      <button class="ghost-btn" id="pickupBtn">自提点</button>
+      <button class="ghost-btn" id="ordersBtn">我的订单</button>
+      <button class="assistant-fab" id="assistantFab"><span>AI</span><i>买菜助手</i></button>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">今日团购</p>
+        <h1>把产地的新鲜，<em>拼</em>进一顿饭。</h1>
+        <p class="hero-copy">按社区直采、按团分拣、按点自提。每一份都标注产地、规格、成团进度和保鲜建议。</p>
+        <div class="hero-actions">
+          <button class="primary-btn" id="exploreBtn">开始拼团</button>
+          <button class="secondary-btn" id="askAssistantBtn">问问买菜助手</button>
+        </div>
+        <div class="hero-stats">
+          <div><strong id="statProducts">8</strong><span>今日团购</span></div>
+          <div><strong>3</strong><span>社区自提点</span></div>
+          <div><strong>18h</strong><span>截团倒计时</span></div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <p>今日主题</p>
+        <h3>今晚吃点好的</h3>
+        <div class="hero-tags"><span>火锅</span><span>刺身</span><span>水果</span></div>
+      </div>
+    </section>
+
+    <section class="catalog-head">
+      <h2>今日拼团</h2>
+      <div class="category-list" id="categoryList"></div>
+    </section>
+    <section id="productGrid" class="product-grid"></section>
+
+    <section class="pickup-section">
+      <div class="section-head"><h2>社区自提点</h2><p>按距离排序，支持冷鲜存放。</p></div>
+      <div id="pickupGrid" class="pickup-grid"></div>
+    </section>
+  </main>
+
+  <div id="productModal" class="modal">
+    <div class="modal-card" id="productModalCard"></div>
+  </div>
+  <div id="assistantModal" class="assistant-modal">
+    <section class="chat-panel">
+      <header class="chat-header">
+        <div class="agent-avatar">鲜</div>
+        <div><strong>Fresh 买菜助手</strong><span>在线 · 基于真实团购数据</span></div>
+        <button class="icon-btn" data-assistant-close>×</button>
+      </header>
+      <div id="assistantMessages" class="assistant-messages">
+        <div class="message assistant"><div class="agent-avatar small">鲜</div><div class="chat-body"><div class="bubble">你好，可以问我“今天买什么”、“草莓还差几人成团”或“最近的取货点”。</div></div></div>
+      </div>
+      <div class="quick-prompts">
+        <button data-prompt="推荐两款适合火锅的食材">火锅推荐</button>
+        <button data-prompt="草莓的拼团进度怎么样？">查拼团</button>
+        <button data-prompt="最近的取货点在哪？">查自提点</button>
+      </div>
+      <form id="assistantForm" class="assistant-form">
+        <input id="assistantInput" placeholder="说说今天想吃什么…" autocomplete="off">
+        <button class="send-btn">发送</button>
+      </form>
+    </section>
+  </div>
+  <div id="toast" class="toast"></div>
+  <script src="./app.js"></script>
+</body>
+</html>

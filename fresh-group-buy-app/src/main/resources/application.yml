@@ -1,0 +1,11 @@
+server:
+  port: 18082
+
+spring:
+  application:
+    name: fresh-group-buy
+
+groupbuy:
+  assistant:
+    harness-base-url: http://127.0.0.1:8090
+    agent-id: fresh-group-buy-demo
